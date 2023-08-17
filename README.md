@@ -24,13 +24,13 @@ numpy = 1.20.3
 pandas = 1.5.2
 ```
 
-The <input> dataset is assumed be a csv-like file with a column storing SMILES. There are two cases allowed for each entry in the dataset.
+The `<input>` dataset is assumed be a csv-like file with a column storing SMILES. There are two cases allowed for each entry in the dataset.
 
 1. It contains only one SMILES. The Enumerator helps to build the protonated/deprotonated macrostate and complete the original macrostate.
-    - When <mode> is "A", it will be considered as an acid (thrown into A pool). 
-    - When <mode> is "B", it will be considered as a base (thrown into B pool).
+    - When `<mode>` is "A", it will be considered as an acid (thrown into A pool). 
+    - When `<mode>` is "B", it will be considered as a base (thrown into B pool).
 2. It contains a string like "A1,...,Am>>B1,...Bn", where A1,...,Am are comma-separated SMILES of microstates in the acid macrostate (all thrown into A pool), and B1,...,Bn are comma-separated SMILES of microstates in the base macrostate(all thrown into B pool). The Enumerator helps to complete the both.
 
-The <mode> "A" (default) or "B" determines which pool (A/B) is the reference structures and the starting point of the enumeration.
+The `<mode>` "A" (default) or "B" determines which pool (A/B) is the reference structures and the starting point of the enumeration.
 
-The <output> dataset is then constructed after the enumeration.
+The `<output>` dataset is then constructed after the enumeration.
