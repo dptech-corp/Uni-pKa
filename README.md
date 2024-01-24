@@ -4,7 +4,7 @@ The official implementation of the paper Uni-p*K*<sub>a</sub>: An Accurate and P
 Preprint at [[ChemRxiv](https://chemrxiv.org/engage/chemrxiv/article-details/64e8da3879853bbd786ca4eb)] | Ligand protonation and ranking demo at [[Bohrium App](https://app.bohrium.dp.tech/uni-pka)] | Full datasets at [[AISSquare](https://www.aissquare.com/datasets/detail?pageType=datasets&name=Uni-pKa-Dataset)]
 
 This machine-learning-based p*K*<sub>a</sub> prediction model achieves the state-of-the-art accuracy on several drug-like small molecule datasets.
-![Alt text](performance.png)
+![Uni-p*K*<sub>a</sub>'s performance](performance.png)
 
 ## Machine Learning
 To do: 
@@ -42,6 +42,8 @@ The `<input>` dataset is assumed be a csv-like file with a column storing SMILES
     - When `<mode>` is "A", it will be considered as an acid (thrown into A pool). 
     - When `<mode>` is "B", it will be considered as a base (thrown into B pool).
 2. It contains a string like "A1,...,Am>>B1,...Bn", where A1,...,Am are comma-separated SMILES of microstates in the acid macrostate (all thrown into A pool), and B1,...,Bn are comma-separated SMILES of microstates in the base macrostate(all thrown into B pool). The Enumerator helps to complete the both.
+
+![A/B mode of the microstate enumerator](protensemble.png)
 
 The `<mode>` "A" (default) or "B" determines which pool (A/B) is the reference structures and the starting point of the enumeration.
 
