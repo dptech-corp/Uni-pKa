@@ -1,18 +1,30 @@
-# ProtoEnumerator
+# Uni-pKa
+The official implementation of the paper Uni-p*K*<sub>a</sub>: An Accurate and Physically Consistent pKa Prediction through Protonation Ensemble Modeling. 
 
-The implementation of the Microstate Enumerator in the paper Uni-pKa: An Accurate and Physically Consistent pKa Prediction through Protonation Ensemble Modeling.
+Preprint at [[ChemRxiv](https://chemrxiv.org/engage/chemrxiv/article-details/64e8da3879853bbd786ca4eb)] | Ligand protonation and ranking demo at [[Bohrium App](https://app.bohrium.dp.tech/uni-pka)] | Full datasets at [[AISSquare](https://www.aissquare.com/datasets/detail?pageType=datasets&name=Uni-pKa-Dataset)]
 
-## Introduction
+This machine-learning-based p*K*<sub>a</sub> prediction model achieves the state-of-the-art accuracy on several drug-like small molecule datasets.
+![Alt text](performance.png)
+
+## Machine Learning
+To do: 
+- release the training and inference codes
+- release the model weights
+
+## Microstate Enumerator
+
+### Introduction
 
 It uses iterated template-matching algorithm to enumerate all the microstates in adjacent macrostates of a molecule's protonation ensemble from at least one microstate stored as SMILES.
 
 The protonation template `smarts_pattern.tsv` modifies and augments the one in the paper [MolGpka: A Web Server for Small Molecule pKa Prediction Using a Graph-Convolutional Neural Network](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00075) and its open source implementation (MIT license) in the Github repository [MolGpKa](https://github.com/Xundrug/MolGpKa/blob/master/src/utils/smarts_pattern.tsv).
 
-## Usage
+### Usage
 
 `main.py` is to reconstruct a plain pKa dataset to the Uni-pKa standard format with fully enumerated microstates.
 
 ```shell
+cd enumerator
 python main.py enum -i <input> -o <output> -m <mode>
 ```
 
