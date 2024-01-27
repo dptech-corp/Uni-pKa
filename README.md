@@ -1,10 +1,15 @@
-# Uni-pKa
+# Uni-p*K*<sub>a</sub>
 The official implementation of the paper Uni-p*K*<sub>a</sub>: An Accurate and Physically Consistent pKa Prediction through Protonation Ensemble Modeling. 
 
 Preprint at [[ChemRxiv](https://chemrxiv.org/engage/chemrxiv/article-details/64e8da3879853bbd786ca4eb)] | Ligand protonation and ranking demo at [[Bohrium App](https://app.bohrium.dp.tech/uni-pka)] | Full datasets at [[AISSquare](https://www.aissquare.com/datasets/detail?pageType=datasets&name=Uni-pKa-Dataset)]
 
 This machine-learning-based p*K*<sub>a</sub> prediction model achieves the state-of-the-art accuracy on several drug-like small molecule datasets.
 ![Uni-p*K*<sub>a</sub>'s performance](performance.png)
+
+The central components of Uni-p*K*<sub>a</sub> framework are the [Uni-Mol](https://github.com/dptech-corp/Uni-Mol) based, physically consistent machine learning model and the chemoinformatics tool used as a microstate enumerator. The training and inference workflow is illustrated below.
+
+![Alt text](img_v3_027e_10c42bfc-3dd3-499c-b448-3e0a448ccceg.jpg)
+
 
 ## Machine Learning
 To do: 
