@@ -27,7 +27,7 @@ The protonation template `smarts_pattern.tsv` modifies and augments the one in t
 
 ### Usage
 
-`main.py` is to reconstruct a plain pKa dataset to the Uni-pKa standard format with fully enumerated microstates.
+`main.py` is to reconstruct a plain p*K*<sub>a</sub> dataset to the Uni-p*K*<sub>a</sub> standard macro-p*K*<sub>a</sub> format with fully enumerated microstates.
 
 ```shell
 cd enumerator
