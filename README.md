@@ -15,7 +15,7 @@ ensemble from a single structure.
 
 The model reaches the expected accuracy in the inference stage after the comprehensive data preparation by the enumerator, pretraining on the ChemBL dataset and finetuning on our Dwar-iBond dataset.
 
-![Alt text](overview.jpg)
+![Alt text](overview.png)
 
 ## Microstate Enumerator
 
@@ -61,7 +61,7 @@ The `<output>` dataset is then constructed after the enumeration.
 
 It is a [Uni-Mol](https://github.com/dptech-corp/Uni-Mol)-based neural network. By embedding the neural network into thermodynamic relationship between the free energy and p*K*<sub>a</sub> throughout the training and inference stages, the framework preserves physical consistency and adapts to multiple tasks.
 
-![Alt text](mechanism.jpg)
+![Alt text](inference.png)
 
 ### Usage
 
