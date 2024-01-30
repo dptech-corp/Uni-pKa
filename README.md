@@ -4,7 +4,7 @@ The official implementation of the paper Uni-p*K*<sub>a</sub>: An Accurate and P
 Relevant preprint at [[ChemRxiv](https://chemrxiv.org/engage/chemrxiv/article-details/64e8da3879853bbd786ca4eb)] | Small molecule protonation state ranking demo at [[Bohrium App](https://app.bohrium.dp.tech/uni-pka)] | Full datasets at [[AISSquare](https://www.aissquare.com/datasets/detail?pageType=datasets&name=Uni-pKa-Dataset)]
 
 This machine-learning-based p*K*<sub>a</sub> prediction model achieves the state-of-the-art accuracy on several drug-like small molecule macro-p*K*<sub>a</sub> datasets.
-![Uni-p*K*<sub>a</sub>'s performance](performance.png)
+![Uni-p*K*<sub>a</sub>'s performance](image/performance.png)
 
 Two core components of Uni-p*K*<sub>a</sub> framework are
 
@@ -15,7 +15,7 @@ ensemble from a single structure.
 
 The model reaches the expected accuracy in the inference stage after the comprehensive data preparation by the enumerator, pretraining on the ChemBL dataset and finetuning on our Dwar-iBond dataset.
 
-![Alt text](overview.png)
+![Alt text](image/overview.png)
 
 ## Microstate Enumerator
 
@@ -49,7 +49,7 @@ The `<input>` dataset is assumed be a csv-like file with a column storing SMILES
     - When `<mode>` is "B", it will be considered as a base (thrown into B pool).
 2. It contains a string like "A1,...,Am>>B1,...Bn", where A1,...,Am are comma-separated SMILES of microstates in the acid macrostate (all thrown into A pool), and B1,...,Bn are comma-separated SMILES of microstates in the base macrostate(all thrown into B pool). The Enumerator helps to complete the both.
 
-![A/B mode of the microstate enumerator](protensemble.png)
+![A/B mode of the microstate enumerator](image/protensemble.png)
 
 The `<mode>` "A" (default) or "B" determines which pool (A/B) is the reference structures and the starting point of the enumeration.
 
@@ -61,7 +61,7 @@ The `<output>` dataset is then constructed after the enumeration.
 
 It is a [Uni-Mol](https://github.com/dptech-corp/Uni-Mol)-based neural network. By embedding the neural network into thermodynamic relationship between the free energy and p*K*<sub>a</sub> throughout the training and inference stages, the framework preserves physical consistency and adapts to multiple tasks.
 
-![Alt text](inference.png)
+![Alt text](image/inference.png)
 
 ### Usage
 
