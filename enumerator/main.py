@@ -40,9 +40,9 @@ FILTER_PATTERNS = list(map(MolFromSmarts, [
 
 def _read_dataset(dataset_file: str)-> pd.DataFrame:
     try:
-        dataset = pd.read_csv(dataset_file, sep="\t")
+        dataset = pd.read_csv(dataset_file, sep="\t", index_col=False)
     except pd.errors.ParserError:
-        dataset = pd.read_csv(dataset_file, sep=",")
+        dataset = pd.read_csv(dataset_file, sep=",", index_col=False)
     return dataset
 
 
@@ -452,7 +452,7 @@ def enum_dataset(input_file: str, output_file: str, template: str, mode: str, co
         SMILES_col.append(",".join(smis_a) + ">>" + ",".join(smis_b))
 
     dataset["SMILES"] = SMILES_col
-    dataset[["SMILES", "TARGET", "ref."]].to_csv(output_file, sep="\t")
+    dataset.to_csv(output_file, sep="\t")
     check_dataset(output_file)
     return dataset
 
