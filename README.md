@@ -27,19 +27,19 @@ The protonation template `smarts_pattern.tsv` modifies and augments the one in t
 
 ### Usage
 
-`main.py` is to reconstruct a plain p*K*<sub>a</sub> dataset to the Uni-p*K*<sub>a</sub> standard macro-p*K*<sub>a</sub> format with fully enumerated microstates.
-
-```shell
-cd enumerator
-python main.py enum -i <input> -o <output> -m <mode>
-```
-
 The recommended environment is
 ```yaml
 python = 3.8.13
 rdkit = 2021.09.5
 numpy = 1.20.3
 pandas = 1.5.2
+```
+
+#### Reconstruct a plain p*K*<sub>a</sub> dataset to the Uni-p*K*<sub>a</sub> standard macro-p*K*<sub>a</sub> format with fully enumerated microstates
+
+```shell
+cd enumerator
+python main.py reconstruct -i <input> -o <output> -m <mode>
 ```
 
 The `<input>` dataset is assumed be a csv-like file with a column storing SMILES. There are two cases allowed for each entry in the dataset.
@@ -54,6 +54,16 @@ The `<input>` dataset is assumed be a csv-like file with a column storing SMILES
 The `<mode>` "A" (default) or "B" determines which pool (A/B) is the reference structures and the starting point of the enumeration.
 
 The `<output>` dataset is then constructed after the enumeration.
+
+#### Build protonation ensembles from single molecules
+
+Example:
+```shell
+cd enumerator
+python main.py ensemble -i ../dataset/sampl6.tsv -o example_out.tsv -u 2 -l -2 -t simple_smarts_pattern.tsv
+```
+
+The input dataset is SAMPL6 dataset as example. Reconstructed p*K*<sub>a</sub> dataset, or just any molecular dataset with an "SMILES" column with single molecular SMILES is supported as the input. In the output file, like `example_out.tsv`, columns include the original SMILES, and macrostates of total charge between the upper bound set by `-u` (default +2) and the lower bound set by `-l` (default -2). A simpler template is prepared as `simple_smarts_pattern.tsv` here for cleaner protonation ensembles which discard some rare structure motifs in the aqueous solution.
 
 ## Machine Learning Model
 

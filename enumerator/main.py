@@ -5,7 +5,7 @@ from argparse import ArgumentParser
 import pandas as pd
 import numpy as np
 from tqdm import tqdm, trange
-from rdkit.Chem import MolFromSmarts, AddHs, MolFromSmiles, SanitizeMol, Mol, CanonSmiles, MolToSmiles, RemoveHs, RWMol
+from rdkit.Chem import MolFromSmarts, AddHs, MolFromSmiles, SanitizeMol, Mol, CanonSmiles, MolToSmiles, RemoveHs, RWMol, GetFormalCharge
 from rdkit.RDLogger import DisableLog
 
 
@@ -457,6 +457,76 @@ def enum_dataset(input_file: str, output_file: str, template: str, mode: str, co
     return dataset
 
 
+def enum_ensemble(input_file: str, output_file: str, template: str, upper: str, lower: str, column: str, maxiter: int) -> pd.DataFrame:
+    """
+    Enumerate the full macrostate and reconstruct the pairwise acid/base dataset from a molecule-wise or pairwise acid/base dataset.
+
+    Params:
+    ----
+    `input_file`: The path of input molecules.
+
+    `output_file`: The path of output ensembles.
+
+    `upper`: The maximum total charge of protonation ensembles.
+
+    `lower`: The minimum total charge of protonation ensembles.
+
+    `column`: The name of the column storing SMILES. 
+
+    `maxiter`: Max iteration number of template matching and microstate pool growth. 
+
+    Return:
+    ----
+    The enumerated protonation ensembles.
+    """
+    print(f"Enumerating the protonation ensemble for {input_file} with the template {template} with maximum charge {upper} and minimum charge {lower}")
+    smis, _, _ = read_dataset(input_file, column, "A")
+    smis = [smi[0] for smi in smis]
+    template_a2b, template_b2a = read_template(template)
+    ensembles = {i: [] for i in range(lower, upper + 1)}
+    
+    for smi in tqdm(smis):
+
+        ensemble = dict()
+        q0 = GetFormalCharge(MolFromSmiles(smi))
+        ensemble[q0] = [smi]
+
+        smis_0 = [smi]
+
+        if q0 > lower:
+            smis_0, smis_b1 = enumerate_template(smis_0, template_a2b, template_b2a, maxiter=maxiter, mode="A")
+            if smis_b1:
+                ensemble[q0 - 1] = smis_b1
+            for q in range(q0 - 2, lower, -1):
+                if q + 1 in ensemble:
+                    _, smis_b = enumerate_template(ensemble[q + 1], template_a2b, template_b2a, maxiter=maxiter, mode="A")
+                    if smis_b:
+                        ensemble[q] = smis_b
+
+        if q0 < upper:
+            smis_a1, smis_0 = enumerate_template(smis_0, template_a2b, template_b2a, maxiter=maxiter, mode="B")
+            if smis_a1:
+                ensemble[q0 + 1] = smis_a1
+            for q in range(q0 + 2, upper):
+                if q - 1 in ensemble:
+                    smis_a, _ = enumerate_template(ensemble[q - 1], template_a2b, template_b2a, maxiter=maxiter, mode="B")
+                    if smis_a:
+                        ensemble[q] = smis_a
+        
+        ensemble[q0] = smis_0
+        
+        for q in ensembles:
+            if q in ensemble:
+                ensembles[q].append(",".join(ensemble[q]))
+            else:
+                ensembles[q].append(None)
+
+    ensembles[column] = smis
+    ensembles = pd.DataFrame(ensembles)
+    ensembles.to_csv(output_file, sep="\t")
+    return ensembles
+
+
 if __name__ == "__main__":
     parser = ArgumentParser()
     subparser = parser.add_subparsers(dest="command")
@@ -464,7 +534,7 @@ if __name__ == "__main__":
     parser_check = subparser.add_parser("check")
     parser_check.add_argument("-i", "--input", type=str)
 
-    parser_enum = subparser.add_parser("enum")
+    parser_enum = subparser.add_parser("reconstruct")
     parser_enum.add_argument("-i", "--input", type=str)
     parser_enum.add_argument("-o", "--output", type=str)
     parser_enum.add_argument("-t", "--template", type=str, default="smarts_pattern.tsv")
@@ -472,16 +542,34 @@ if __name__ == "__main__":
     parser_enum.add_argument("-c", "--column", type=str, default="SMILES")
     parser_enum.add_argument("-m", "--mode", type=str, default="A")
 
+    parser_enum = subparser.add_parser("ensemble")
+    parser_enum.add_argument("-i", "--input", type=str)
+    parser_enum.add_argument("-o", "--output", type=str)
+    parser_enum.add_argument("-t", "--template", type=str, default="simple_smarts_pattern.tsv")
+    parser_enum.add_argument("-u", "--upper", type=int, default=2)
+    parser_enum.add_argument("-l", "--lower", type=int, default=-2)
+    parser_enum.add_argument("-n", "--maxiter", type=int, default=10)
+    parser_enum.add_argument("-c", "--column", type=str, default="SMILES")
 
     args = parser.parse_args()
     if args.command == "check":
         check_dataset(args.input)
-    elif args.command == "enum":
+    elif args.command == "reconstruct":
         enum_dataset(
             input_file=args.input, 
             output_file=args.output, 
             template=args.template, 
             mode=args.mode,
+            column=args.column,
+            maxiter=args.maxiter
+        )
+    elif args.command == "ensemble":
+        enum_ensemble(
+            input_file=args.input,
+            output_file=args.output,
+            template=args.template,
+            upper=args.upper,
+            lower=args.lower,
             column=args.column,
             maxiter=args.maxiter
         )

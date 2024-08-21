@@ -1,0 +1,57 @@
+Substructure	SMARTS	Index	Acid_or_base
+Sulfate monoether	[SX4:0](=[O:1])(=[O:2])(-[O:3])-[OX2:4]-[H:5]	4	A
+Sulfate monoether	[SX4:0](=[O:1])(=[O:2])(-[O:3])-[O-1:4]	4	B
+Sulfonic acid	[SX4:0](=[O:1])(=[O:2])(-[#6,#7:3])-[OX2:4]-[H:5]	4	A
+Sulfonic acid	[SX4:0](=[O:1])(=[O:2])(-[#6,#7:3])-[O-1:4]	4	B
+Sulfinic acid	[SX3:0](=[O:1])(-[#6,#7:2])-[OX2:3]-[H:4]	3	A
+Sulfinic acid	[SX3:0](=[O:1])(-[0#6,#7:2])-[O-1:3]	3	B
+Seleninic acid	[SeX3:0](=[O:1])(-[#6,#7:2])-[OX2:3]-[H:4]	3	A
+Seleninic acid	[SeX3:0](=[O:1])(-[#6,#7:2])-[O-1:3]	3	B
+Selenenic acid	[SeX2:0]-[OX2:1]-[H:2]	1	A
+Selenenic acid	[SeX2:0]-[O-1:1]	1	B
+Arsonic acid	[AsX4:0](=[O:1])(-[#6,#7:2])-[OX2:3]-[H:4]	3	A
+Arsonic acid	[AsX4:0](=[O:1])(-[#6,#7:2])-[O-1:3]	3	B
+Thiosulfuric acid	[S:0]~[SX4:1](~[O:2])(~[O:3])-[O:4]-[H:5]	4	A
+Thiosulfuric acid	[S:0]~[SX4:1](~[O:2])(~[O:3])-[O-1:4]	4	B
+Phosph(o/i)nic acid	[PX4:0](=[O:1])(-[OX2:2]-[H:5])(-[#1,#6,#7,#8:3])(-[#1,#6,#7,#8:4])	2	A
+Phosph(o/i)nic acid	[PX4:0](=[O:1])(-[O-1:2])(-[#1,#6,#7,#8:3])(-[#1,#6,#7,#8:4])	2	B
+Phosphate (mono/di)ether	[PX4:0](=[O:1])(-[O:2])(-[O:3])-[OX2:4]-[H:5]	4	A
+Phosphate (mono/di)ether	[PX4:0](=[O:1])(-[O:2])(-[O:3])-[O-1:4]	4	B
+Carboxyl acid	[$([#6]=[#8,#7]),$(C#N):0]-[OX2:1]-[H:2]	1	A
+Carboxyl acid	[$([#6]=[#8,#7]),$(C#N):0]-[O-1:1]	1	B
+Carboxyl acid enol	[C:0]=[C:1](-[OX2:2]-[H:3])-[OX2:4]-[H:5]	4	A
+Carboxyl acid enol	[C:0]=[C:1](-[OX2:2]-[H:3])-[O-1:4]	4	B
+Carbo(di)thioic acid	[CX3:0](=[O,S:1])-[SX2,OX2:2]-[H:3]	2	A
+Carbo(di)thioic acid	[CX3:0](=[O,S:1])-[S-1,O-1:2]	2	B
+Carboxyl acid vinylogue 	[O:0]=[C:1]-[C:2]=[C:3]-[OX2:4]-[H:5]	4	A
+Carboxyl acid vinylogue	[O:0]=[C:1]-[C:2]=[C:3]-[O-1:4]	4	B
+Thiol/Thiophenol	[#6,#7:0]-[SX2:1]-[H:2]	1	A
+Thiol/Thiophenol	[#6,#7:0]-[S-1:1]	1	B
+Phenol	[c,n:0]-[OX2:1]-[H:2]	1	A
+Phenol	[c,n:0]-[O-1:1]	1	B
+Hydroperoxide/Hydroxyl amine	[O,N:0]-[OX2:1]-[H:2]	1	A
+Hydroperoxide/Hydroxyl amine	[O,N:0]-[O-1:1]	1	B
+Azole	[#7:0]1(-[H:5])-,:[#7,#6:1]=,:[#7,#6:2]-,:[#7,#6:3]=,:[#7,#6:4]-,:1	0	A
+Azole	[#7-1:0]1-,:[#7,#6:1]=,:[#7,#6:2]-,:[#7,#6:3]=,:[#7,#6:4]-,:1	0	B
+Aza-aromatics	[n:0]-[H:1]	0	A
+Aza-aromatics	[n-1,n+0X2:0]	0	B
+Oxime	[$([#7]:,=[#6,#7]),$([#7]:,=[#6,#7]:,-[#6,#7]:,=[#6,#7]):0]-[OX2,NX3:1]-[H:2]	1	A
+Oxime	[$([#7]:,=[#6,#7]),$([#7]:,=[#6,#7]:,-[#6,#7]:,=[#6,#7]):0]-[O-1,NX2-1:1]	1	B
+Amine	[NX4+1:0](-[H:4])(-[CX4,c,#7,#8,#1,S,$(C=C),Cl:1])(-[CX4,c,#7,#8,#1,S,$(C=C):2])(-[CX4,c,#7,#8,#1,S,$(C=C):3])	0	A
+Amine	[NX3:0](-[CX4,c,#7,#8,#1,S,$(C=C),Cl:1])(-[CX4,c,#7,#8,#1,S,$(C=C):2])(-[CX4,c,#7,#8,#1,S,$(C=C):3])	0	B
+Imine	[#6,#7,P,S:0]=[NX3+1:1](-[H:2])	1	A
+Imine	[#6,#7,P,S:0]=[NX2:1]	1	B
+Amide	[$([#7]=[#7,#8]),$(c:c:c:c:[#7+1]):0]-[NX3:1]-[H:2]	1	A
+Amide	[$([#7]=[#7,#8]),$(c:c:c:c:[#7+1]):0]-[NX2-1:1]	1	B
+Amide imine	[$([#6]-,:[O,S,#7]),N+1:0]=,:[NX2:1]-[H:2]	1	A
+Amide imine	[$([#6]-,:[O,S,#7]),N+1:0]=,:[NX1-1:1]	1	B
+Sulfamide	[SX4:0](=[O:1])(=[O:2])-[NX3:3]-[H:4]	3	A
+Sulfamide	[SX4:0](=[O:1])(=[O:2])-[NX2-1:3]	3	B
+Phosphamide	[PX4:0](=[O:1])-[NX3:2]-[H:3]	2	A
+Phosphamide	[PX4:0](=[O:1])-[NX2-1:2]	2	B
+Enol	[$([#6]=,:[#7,#8]),$(C#N),#7+1,$([S]=[O]),OH1:0]-[#6:1]:,=[#6:2]-[OX2:3]-[H:4]	3	A
+Enol	[$([#6]=,:[#7,#8]),$(C#N),#7+1,$([S]=[O]),OH1:0]-[#6:1]:,=[#6:2]-[O-1:3]	3	B
+Hydrocyanic acid	[N:0]#[C:1]-[H:2]	1	A
+Hydrocyanic acid	[N:0]#[C-1:1]	1	B
+Selenol	[SeX2:0]-[H:1]	0	A
+Selenol	[SeX1-1:0]	0	B

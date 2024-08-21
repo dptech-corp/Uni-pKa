@@ -1,0 +1,26 @@
+	SMILES	TARGET	ref.
+0	O=C(O)c1ccccc1[NH2+]c1cccc(C(F)(F)F)c1,OC(=[OH+])c1ccccc1Nc1cccc(C(F)(F)F)c1>>OC(=O)c1ccccc1Nc1cccc(c1)C(F)(F)F,O=C([O-])c1ccccc1[NH2+]c1cccc(C(F)(F)F)c1	2.54	SAMPL8 SAMPL8-1 pKa
+1	OC(=O)c1ccccc1Nc1cccc(c1)C(F)(F)F,O=C([O-])c1ccccc1[NH2+]c1cccc(C(F)(F)F)c1>>O=C([O-])c1ccccc1Nc1cccc(C(F)(F)F)c1,O=C(O)c1ccccc1[N-]c1cccc(C(F)(F)F)c1	5.01	SAMPL8 SAMPL8-1 pKa
+2	CS(=O)(=O)c1ccc(CCC(O)=O)cc1>>CS(=O)(=O)c1ccc(CCC(=O)[O-])cc1	4.41	SAMPL8 SAMPL8-2 pKa
+3	NS(=O)(=O)c1cc(C(O)=O)c(NCc2ccco2)cc1Cl,NS(=O)(=O)c1cc(C(=O)[O-])c([NH2+]Cc2ccco2)cc1Cl,[NH3+]S(=O)(=O)c1cc(C(=O)[O-])c(NCc2ccco2)cc1Cl>>[NH-]S(=O)(=O)c1cc(C(=O)O)c(NCc2ccco2)cc1Cl,NS(=O)(=O)c1cc(C(=O)O)c([N-]Cc2ccco2)cc1Cl,NS(=O)(=O)c1cc(C(=O)[O-])c(NCc2ccco2)cc1Cl	4.0	SAMPL8 SAMPL8-3 pKa
+4	Cc1sc(Nc2ccc(C#[NH+])c(Cl)c2)nc1C(=O)[O-],Cc1sc([NH2+]c2ccc(C#N)c(Cl)c2)nc1C(=O)[O-],Cc1sc(Nc2ccc(C#N)c(Cl)c2)[nH+]c1C(=O)[O-],Cc1sc(Nc2ccc(C#N)c(Cl)c2)nc1C(O)=O>>Cc1sc([N-]c2ccc(C#N)c(Cl)c2)nc1C(=O)O,Cc1sc(Nc2ccc(C#N)c(Cl)c2)nc1C(=O)[O-]	5.77	SAMPL8 SAMPL8-4 pKa
+5	O=C(O)Cc1ccccc1Nc1c(Cl)cccc1Cl,O=C([O-])Cc1ccccc1[NH2+]c1c(Cl)cccc1Cl>>[O-]C(=O)Cc1ccccc1Nc1c(Cl)cccc1Cl,O=C(O)[CH-]c1ccccc1Nc1c(Cl)cccc1Cl	3.92	SAMPL8 SAMPL8-5 pKa
+6	Cc1ccc(Cl)cc1NCc1ccc(s1)C(O)=O,Cc1ccc(Cl)cc1[NH2+]Cc1ccc(C(=O)[O-])s1>>Cc1ccc(Cl)cc1NCc1ccc(C(=O)[O-])s1	4.17	SAMPL8 SAMPL8-6 pKa
+7	[NH3+]c1nc2ccc(Br)cc2n1CC1(O)CCOCC1,Nc1nc2ccc(Br)cc2n1CC1([OH2+])CCOCC1,Nc1[nH+]c2ccc(Br)cc2n1CC1(O)CCOCC1>>Nc1nc2ccc(Br)cc2n1CC1(O)CCOCC1	6.63	SAMPL8 SAMPL8-7 pKa
+8	COC(=O)c1cn2cccc(C(F)(F)F)c2[nH+]1,COC(=[OH+])c1cn2cccc(C(F)(F)F)c2n1>>COC(=O)c1cn2cccc(c2n1)C(F)(F)F	2.78	SAMPL8 SAMPL8-8 pKa
+9	Nc1[nH+]c2ccc(Br)cc2n1CC1(O)CCCCC1,[NH3+]c1nc2ccc(Br)cc2n1CC1(O)CCCCC1,Nc1nc2ccc(Br)cc2n1CC1([OH2+])CCCCC1>>Nc1nc2ccc(Br)cc2n1CC1(O)CCCCC1	6.08	SAMPL8 SAMPL8-9 pKa
+10	CS(=O)(=[OH+])c1cccc(-c2ccc(CNCc3c(F)cccc3Cl)cc2)c1,CS(=O)(=O)c1cccc(-c2ccc(C[NH2+]Cc3c(F)cccc3Cl)cc2)c1>>CS(=O)(=O)c1cccc(c1)-c1ccc(CNCc2c(F)cccc2Cl)cc1	7.71	SAMPL8 SAMPL8-10 pKa
+11	Cc1ccc(Cc2cnc([NH3+])nc2N2CCOCC2)cc1,Cc1ccc(Cc2c[nH+]c(N)nc2N2CCOCC2)cc1,Cc1ccc(Cc2cnc(N)nc2[NH+]2CCOCC2)cc1,Cc1ccc(Cc2cnc(N)[nH+]c2N2CCOCC2)cc1>>Cc1ccc(Cc2cnc(N)nc2N2CCOCC2)cc1	6.98	SAMPL8 SAMPL8-12 pKa
+12	Cc1cc(Cc2cnc(N)nc2[NH3+])cc(C(C)(C)C)c1O,Cc1cc(Cc2c[nH+]c(N)[nH+]c2N)cc(C(C)(C)C)c1[O-],Cc1cc(Cc2cnc(N)[nH+]c2N)cc(C(C)(C)C)c1O,Cc1cc(Cc2cnc([NH3+])nc2[NH3+])cc(C(C)(C)C)c1[O-],Cc1cc(Cc2cnc(N)[nH+]c2[NH3+])cc(C(C)(C)C)c1[O-],Cc1cc(Cc2c[nH+]c(N)nc2N)cc(C(C)(C)C)c1O,Cc1cc(Cc2cnc([NH3+])[nH+]c2N)cc(C(C)(C)C)c1[O-],Cc1cc(Cc2c[nH+]c([NH3+])nc2N)cc(C(C)(C)C)c1[O-],Cc1cc(Cc2c[nH+]c(N)nc2[NH3+])cc(C(C)(C)C)c1[O-],Cc1cc(Cc2cnc([NH3+])nc2N)cc(C(C)(C)C)c1O>>Cc1cc(Cc2cnc(N)[nH+]c2N)cc(C(C)(C)C)c1[O-],Cc1cc(Cc2cnc([NH3+])nc2N)cc(C(C)(C)C)c1[O-],Cc1cc(Cc2cnc(N)nc2N)cc(c1O)C(C)(C)C,Cc1cc(Cc2cnc(N)nc2[NH3+])cc(C(C)(C)C)c1[O-],Cc1cc(Cc2c[nH+]c(N)nc2N)cc(C(C)(C)C)c1[O-]	7.27	SAMPL8 SAMPL8-14 pKa
+13	Cc1ccccc1[NH2+]c1nc(Cl)nc2ccccc12,Cc1ccccc1Nc1nc(Cl)[nH+]c2ccccc12,Cc1ccccc1Nc1[nH+]c(Cl)nc2ccccc12>>Cc1ccccc1Nc1nc(Cl)nc2ccccc12	2.54	SAMPL8 SAMPL8-15 pKa
+14	CC(C)(C)OC(=[OH+])NCc1nc2ccccc2[nH]1,CC(C)(C)OC(=O)NCc1[nH]c2ccccc2[nH+]1>>CC(C)(C)OC(=O)NCc1nc2ccccc2[nH]1	5.1	SAMPL8 SAMPL8-16 pKa
+15	Nc1nc2ccc(Br)cc2n1CC1(C[OH2+])CCOCC1,Nc1[nH+]c2ccc(Br)cc2n1CC1(CO)CCOCC1,[NH3+]c1nc2ccc(Br)cc2n1CC1(CO)CCOCC1>>Nc1nc2ccc(Br)cc2n1CC1(CO)CCOCC1	6.58	SAMPL8 SAMPL8-17 pKa
+16	COc1ccc(Nc2nc(Cl)[nH+]c3ccccc23)cc1OC,COc1ccc([NH2+]c2nc(Cl)nc3ccccc23)cc1OC,COc1ccc(Nc2[nH+]c(Cl)nc3ccccc23)cc1OC>>COc1ccc(Nc2nc(Cl)nc3ccccc23)cc1OC	2.72	SAMPL8 SAMPL8-18 pKa
+17	COc1ncc(Cc2c[nH]c(SCc3nc4ccccc4n3C)[nH+]c2=O)cn1,COc1ncc(Cc2c[nH]c(SCc3[nH+]c4ccccc4n3C)nc2=O)cn1,COc1ncc(Cc2c[nH]c(SCc3nc4ccccc4n3C)nc2=O)c[nH+]1,COc1ncc(Cc2c[nH]c(SCc3nc4ccccc4n3C)nc2=[OH+])cn1>>COc1ncc(Cc2c[nH]c(SCc3nc4ccccc4n3C)nc2=O)cn1	4.93	SAMPL8 SAMPL8-19 pKa
+17	COc1ncc(Cc2c[nH]c(SCc3nc4ccccc4n3C)nc2=O)cn1>>COc1ncc(Cc2c[n-]c(SCc3nc4ccccc4n3C)nc2=O)cn1	6.99	SAMPL8 SAMPL8-19 pKa
+19	[NH3+]c1n[nH]c2nc(-c3ccccc3)c(Cl)cc12,Nc1[nH+][nH]c2nc(-c3ccccc3)c(Cl)cc12,Nc1n[nH]c2[nH+]c(-c3ccccc3)c(Cl)cc12>>Nc1n[nH]c2nc(c(Cl)cc12)-c1ccccc1	2.44	SAMPL8 SAMPL8-20 pKa
+20	Nc1n[nH]c2nc(c(Cl)cc12)-c1ccccc1>>Nc1n[n-]c2nc(-c3ccccc3)c(Cl)cc12,[NH-]c1n[nH]c2nc(-c3ccccc3)c(Cl)cc12	11.44	SAMPL8 SAMPL8-20 pKa
+21	COc1cc(Cc2c(OC)nc([NH3+])[nH+]c2N)cc(OC)c1[O-],COc1cc(Cc2c(OC)nc(N)[nH+]c2N)cc(OC)c1O,COc1cc(Cc2c(N)nc([NH3+])[nH+]c2OC)cc(OC)c1[O-],COc1cc(Cc2c(N)nc(N)[nH+]c2OC)cc(OC)c1O,COc1cc(Cc2c(N)[nH+]c(N)[nH+]c2OC)cc(OC)c1[O-],COc1cc(Cc2c([NH3+])nc(N)nc2OC)cc(OC)c1O,COc1cc(Cc2c(N)nc([NH3+])nc2OC)cc(OC)c1O,COc1cc(Cc2c([NH3+])nc([NH3+])nc2OC)cc(OC)c1[O-],COc1cc(Cc2c([NH3+])nc(N)[nH+]c2OC)cc(OC)c1[O-],COc1cc(Cc2c(OC)nc(N)[nH+]c2[NH3+])cc(OC)c1[O-]>>COc1cc(Cc2c(N)nc([NH3+])nc2OC)cc(OC)c1[O-],COc1cc(Cc2c(N)nc(N)nc2OC)cc(OC)c1O,COc1cc(Cc2c(N)nc(N)[nH+]c2OC)cc(OC)c1[O-],COc1cc(Cc2c(OC)nc(N)[nH+]c2N)cc(OC)c1[O-],COc1cc(Cc2c([NH3+])nc(N)nc2OC)cc(OC)c1[O-]	5.38	SAMPL8 SAMPL8-21 pKa
+22	COc1cc2[nH+]c(Cl)nc(N)c2cc1OC,COc1cc2nc(Cl)nc([NH3+])c2cc1OC,COc1cc2nc(Cl)[nH+]c(N)c2cc1OC>>COc1cc2nc(Cl)nc(N)c2cc1OC	3.36	SAMPL8 SAMPL8-22 pKa
+23	Cc1[nH+]c2cc(O)ccc2s1>>Cc1[nH+]c2cc([O-])ccc2s1,Cc1nc2cc(O)ccc2s1	2.65	SAMPL8 SAMPL8-23 pKa
+24	Cc1[nH+]c2cc([O-])ccc2s1,Cc1nc2cc(O)ccc2s1>>Cc1nc2cc([O-])ccc2s1	9.02	SAMPL8 SAMPL8-23 pKa
