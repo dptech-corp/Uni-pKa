@@ -173,7 +173,7 @@ class UniMolPKAMLMTask(UnicoreTask):
             self.__init_data()
 
     def __init_data(self):
-        data_path = os.path.join(self.args.data, self.args.task_name, self.args.task_name + '.lmdb')
+        data_path = os.path.join(self.args.data, self.args.task_name + '.lmdb')
         raw_dataset = LMDBDataset(data_path)
         if self.args.split_mode == 'cross_valid':
             train_folds = []
@@ -210,14 +210,14 @@ class UniMolPKAMLMTask(UnicoreTask):
             elif split == 'valid':
                 dataset =self.valid_dataset
         else:
-            split_path = os.path.join(self.args.data, self.args.task_name, split + ".lmdb")
+            split_path = os.path.join(self.args.data, split + ".lmdb")
             dataset = LMDBDataset(split_path)
         tgt_dataset = KeyDataset(dataset, "target")
         if split in ['train', 'train.small']:
             tgt_list = [tgt_dataset[i] for i in range(len(tgt_dataset))]
             self.mean = sum(tgt_list) / len(tgt_list)
             self.std = 1
-        elif split in ['novartis_a', 'novartis_b', 'sampl6_macro_regen', 'sampl7_macro_regen', 'sampl8_macro_regen']:
+        elif split in ['novartis_acid', 'novartis_base', 'sampl6', 'sampl7', 'sampl8']:
             self.mean = 6.504894871171601  # precompute from dwar_8228 full set
             self.std = 1
         id_dataset = KeyDataset(dataset, "ori_smi")
