@@ -1,7 +1,9 @@
 # Uni-p*K*<sub>a</sub>
 The official implementation of the model Uni-p*K*<sub>a</sub> in the paper Bridging Machine Learning and Thermodynamics for Accurate p*K*<sub>a</sub> Prediction.
 
-Published paper at [[JACS Au](https://pubs.acs.org/doi/10.1021/jacsau.4c00271)] Relevant preprint at [[ChemRxiv](https://chemrxiv.org/engage/chemrxiv/article-details/64e8da3879853bbd786ca4eb)] | Small molecule protonation state ranking demo at [[Bohrium App](https://bohrium.dp.tech/apps/uni-pka)] | Full datasets at [[AISSquare](https://www.aissquare.com/datasets/detail?pageType=datasets&name=Uni-pKa-Dataset)]
+Interactive demo with available model weights at https://bohrium.dp.tech/notebooks/38543442597
+
+Published paper at [[JACS Au](https://pubs.acs.org/doi/10.1021/jacsau.4c00271)] | Relevant preprint at [[ChemRxiv](https://chemrxiv.org/engage/chemrxiv/article-details/64e8da3879853bbd786ca4eb)] | Small molecule protonation state ranking demo at [[Bohrium App](https://bohrium.dp.tech/apps/uni-pka)] | Full datasets at [[AISSquare](https://www.aissquare.com/datasets/detail?pageType=datasets&name=Uni-pKa-Dataset)]
 
 This machine-learning-based p*K*<sub>a</sub> prediction model achieves the state-of-the-art accuracy on several drug-like small molecule macro-p*K*<sub>a</sub> datasets.
 ![Uni-p*K*<sub>a</sub>'s performance](image/performance.png)
